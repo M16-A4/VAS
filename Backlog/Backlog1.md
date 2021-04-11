@@ -10,7 +10,9 @@
 | Automate Mail | Naveen P Nair | In Progress |
 | Linking DB and server | Sidharth S | In Progress |
 
+
 **Other work distribution**
+
 | Task | Who |
 | :---: | :---: |
 | Creating Repo | Vidya Suresh |
