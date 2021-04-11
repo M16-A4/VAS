@@ -7,4 +7,4 @@
 | Setting up Database *(My SQL)* | Aravind H | In Progress |
 | Code Child details | Vidya Suresh | In Progress |
 | Automate Mail | Naveen P Nair | In Progress |
-| Linking DB and server | Sidharth S |
+| Linking DB and server | Sidharth S | In Progress |
