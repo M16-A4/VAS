@@ -1,1 +1,1 @@
-# VAS
+# Vaccination Alert System (VAS)
