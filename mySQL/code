@@ -1,3 +1,20 @@
+SETTING UP SERVER:
+sudo apt install mysql-server
+
+sudo mysql_secure_installation
+
+sudo mysql
+
+CREATE USER 'arav'@'localhost' IDENTIFIED BY 'password';
+
+GRANT CREATE, ALTER, DROP, INSERT, UPDATE, DELETE, SELECT, REFERENCES, RELOAD on *.* TO 'arav'@'localhost' WITH GRANT OPTION;
+
+FLUSH PRIVILEGES;
+
+exit
+
+CREATING DATABASE:
+
 mysql> CREATE DATABASE vac;
 
 mysql> USE vas;
