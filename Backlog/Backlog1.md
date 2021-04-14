@@ -4,9 +4,9 @@
 | :--- | :--- | :---: |
 | Front end UI | Naveen P Nair | In progress |
 | Designing UML | Vidya Suresh | In progress |
-| Creating live server | Sidharth S | Done |
-| Setting up Database *(My SQL)* | Aravind H | Done |
-| Code Child details | Vidya Suresh | In Progress |
+| Creating live server | Sidharth S | Completed |
+| Setting up Database *(My SQL)* | Aravind H | Completed |
+| Code Child details | Vidya Suresh | Completed |
 | Automate Mail | Naveen P Nair | In Progress |
 | Linking DB and server | Sidharth S | In Progress |
 
