@@ -4,29 +4,25 @@ class Child {
     public $email;
     public $firstname;
     public $gender;
-    public $countryId;
     public $zipcode;
-    public $birthday;
-    public $langId;
-    public $userId;
+    public $DOB;
+    public $parentId;
 
     private $db;
 
-    public static function createDummy($birthday, $gender, $langId, $countryId, $zipcode = null) {
-        return new Child(null, null, null, $birthday, $gender, $langId, $countryId, $zipcode, false, null, null);
+    public static function createDummy($DOB, $gender, $zipcode = null) {
+        return new Child(null, null, null, $DOB, $gender, $zipcode, false, null, null);
     }
 
-    public function __construct($db, $email, $firstname, $birthday, $gender, $langId, $countryId, $zipcode = null, $doInsert = true, $childId = null, $userId = null) {
+    public function __construct($db, $email, $firstname, $DOB, $gender, $zipcode = null, $doInsert = true, $childId = null, $parentId = null) {
         if ($doInsert) {
-            $isOk = $db->insert(VAX_DB_PREFIX . "children", [
+            $isOk = $db->insert(VAS_DB_PREFIX . "children", [
                 'email' => $email,
                 'first_name' => $firstname,
                 'gender' => $gender,
-                'country_id' => $countryId,
                 'zipcode' => $zipcode,
-                'birthday' => $birthday,
-                'lang_id' => $langId,
-                'user_id' => $userId
+                'birthday' => $DOB,
+                'parent_id' => $parentId
             ]);
 
             if ($isOk) {
@@ -34,11 +30,9 @@ class Child {
                 $this->email = $email;
                 $this->firstname = $firstname;
                 $this->gender = $gender;
-                $this->countryId = $countryId;
                 $this->zipcode = $zipcode;
-                $this->birthday = $birthday;
-                $this->langId = $langId;
-                $this->userId = $userId;
+                $this->DOB = $DOB;
+                $this->parentId = $parentId;
                 $this->db = $db;
                 return $this;
             }
@@ -47,18 +41,16 @@ class Child {
             $this->email = $email;
             $this->firstname = $firstname;
             $this->gender = $gender;
-            $this->countryId = $countryId;
             $this->zipcode = $zipcode;
-            $this->birthday = $birthday;
-            $this->langId = $langId;
-            $this->userId = $userId;
+            $this->DOB = $DOB;
+            $this->parentId = $parentId;
             $this->db = $db;
             return $this;
         }
     }
 
-    public static function getByIdAndEmail($db, $childId, $email) {
-        $child = $db->fetchAssoc("SELECT * FROM " . VAX_DB_PREFIX . "children WHERE child_id = ? AND email = ?", [$childId, $email]);
+    public static function getByEmail($db, $childId, $email) {
+        $child = $db->fetchAssoc("SELECT * FROM " . VAS_DB_PREFIX . "children WHERE email = ?", [$email]);
 
         if (!empty($child)) {
             return $child;
@@ -68,10 +60,10 @@ class Child {
     }
 
     public static function getById($db, $childId) {
-        $child = $db->fetchAssoc("SELECT * FROM " . VAX_DB_PREFIX . "children WHERE child_id = ?", [$childId]);
+        $child = $db->fetchAssoc("SELECT * FROM " . VAS_DB_PREFIX . "children WHERE child_id = ?", [$childId]);
 
         if (!empty($child)) {
-            return new Child($db, $child['email'], $child['first_name'],  $child['birthday'],  $child['gender'],  $child['lang_id'],  $child['country_id'], $child['zipcode'], false, $child['child_id']);
+            return new Child($db, $child['email'], $child['first_name'],  $child['DOB'],  $child['gender'], $child['zipcode'], false, $child['child_id']); #at the place of parent id, false is placed
         } else {
             return false;
         }
@@ -96,11 +88,12 @@ class Child {
         }
 
         if ($interval->d == 0) {
-            return 'newborn';
+            return 'Newborn';
         }
     }
 
     public function getSchedule() {
 
     }
-\
+}
+
