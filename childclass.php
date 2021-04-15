@@ -1,19 +1,23 @@
 class Child {
 
-    public $childId;
-    public $email;
+    public $childId;            //Unique Id of an individual child
+    public $email;              //Email to give vaccine reminders
     public $firstname;
     public $gender;
-    public $zipcode;
-    public $DOB;
-    public $parentId;
+    public $zipcode;            //To find location of nearby hospitals, (Beta)
+    public $DOB;                //DateOfBirth to calculate the age of child for appropriate vaccine reminder
+    public $parentId;           //A parent can have multiple childs
 
-    private $db;
+    private $db;                //database, to connect and save to sql database
 
+    
+    //add details of newborn child into the class
     public static function createDummy($DOB, $gender, $zipcode = null) {
         return new Child(null, null, null, $DOB, $gender, $zipcode, false, null, null);
     }
 
+
+    //To add details of the child to database
     public function __construct($db, $email, $firstname, $DOB, $gender, $zipcode = null, $doInsert = true, $childId = null, $parentId = null) {
         if ($doInsert) {
             $isOk = $db->insert(VAS_DB_PREFIX . "children", [
@@ -25,8 +29,8 @@ class Child {
                 'parent_id' => $parentId
             ]);
 
-            if ($isOk) {
-                $this->childId = intval($db->lastInsertId());
+            if ($isOk) {                                            //checks if data was added successfully
+                $this->childId = intval($db->lastInsertId());       // the whole function updates the missing elements in class from the db (eg: unique ChildId)
                 $this->email = $email;
                 $this->firstname = $firstname;
                 $this->gender = $gender;
@@ -36,7 +40,7 @@ class Child {
                 $this->db = $db;
                 return $this;
             }
-        } else {
+        } else {                                            //for viewing data in db.
             $this->childId = $childId;
             $this->email = $email;
             $this->firstname = $firstname;
@@ -49,6 +53,8 @@ class Child {
         }
     }
 
+
+    //View information of a child through email.(for login)
     public static function getByEmail($db, $childId, $email) {
         $child = $db->fetchAssoc("SELECT * FROM " . VAS_DB_PREFIX . "children WHERE email = ?", [$email]);
 
@@ -59,6 +65,8 @@ class Child {
         }
     }
 
+
+    //To view some elements of the child through ID (for hospital staffs to view during vaccination)
     public static function getById($db, $childId) {
         $child = $db->fetchAssoc("SELECT * FROM " . VAS_DB_PREFIX . "children WHERE child_id = ?", [$childId]);
 
@@ -69,6 +77,8 @@ class Child {
         }
     }
 
+
+    //To find age of child
     public function getAge() {
         $now = new DateTime();
         $birth = new DateTime($this->birthday);
