@@ -203,3 +203,90 @@ main{
     
     
     
+
+    form{
+        padding-left: 10px;
+    }
+    
+    
+    .name{
+        margin-left: 25px;
+        margin-top: 30px;
+        width: 125px;
+        color: rgb(75, 37, 100);
+        font-size: 18px;
+        font-weight: 700;	
+    }
+    
+    .ID{
+        position: relative;
+        left: 200px;
+        top: -37px;
+        line-height: 40px;
+        width: 480px;
+        border-radius: 6px;
+        padding: 0 22px;
+        font-size: 16px;
+    }
+    
+    .Name{
+        position: relative;
+        left: 200px;
+        top: -37px;
+        line-height: 40px;
+        width: 480px;
+        border-radius: 6px;
+        padding: 0 22px;
+        font-size: 16px;
+        color: rgb(14, 6, 6);
+    }
+    
+    .age{
+        position: relative;
+        left: 200px;
+        top: -37px;
+        line-height: 40px;
+        width: 480px;
+        border-radius: 6px;
+        padding: 0 22px;
+        font-size: 16px;
+        color: #555;
+    }
+    
+    button{
+        background-color: #3BAF9F;
+        display: block;
+        margin: 20px 0px 0px 20px;
+        text-align:center;
+        border-radius: 12px;
+        border: 2px solid #366473;
+        padding: 14px 110px;
+        outline: none;
+        color: white;
+        cursor: pointer;
+        transition: 0.25;
+    }
+    button:hover{
+        background-color: #5390F5;
+    }
+
+    
+    .button{
+        position: absolute;
+        top: 55%;
+        left: 60%;
+        transform: translate(-50%,-50%);
+    }
+    
+    .btn{
+        border: 1px solid #000;
+        padding: 10px 30px;
+        color: #000;
+        text-decoration: none;
+        transition: 0.6s ease;
+    }
+    
+    .btn:hover{
+        background-color: #000;
+        color: #fff;
+    }
