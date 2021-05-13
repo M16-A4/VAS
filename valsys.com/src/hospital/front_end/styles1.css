@@ -1,0 +1,298 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:200,300,400,500,600,700,800,900   &display=swap');
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+
+}
+
+body
+{
+    overflow: auto;
+
+}
+
+.container
+{
+ position: relative;
+ width: 25%;
+
+}
+
+.navigation
+{
+    position:fixed;
+    width: 270px;
+    height:100%;
+    background: #003147;
+    transition:0.5s;
+    overflow: hidden;
+
+
+}
+
+
+.navigation ul
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+}
+
+
+.navigation ul li 
+{
+    position: relative; 
+    width: 100%;
+    list-style: none;
+    
+}
+
+.navigation ul li:hover
+{
+    background: #03a9f4;
+}
+
+.navigation ul li:nth-child(1)
+{
+    margin-bottom: 20px;
+}
+.navigation ul li:nth-child(1):hover
+{
+    background:transparent;
+}
+.navigation ul li a 
+{
+    position: relative;
+    display: block;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    color:#fff;
+
+}
+
+.navigation ul li a .icon
+{
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+}
+
+.navigation ul li a .icon .fa
+{
+    color: #fff;
+    font-size: 24px;
+}
+.navigation ul li a .title
+{
+    position: relative;
+    display: block;
+    padding: 0 10px;
+    height: 60px;
+    line-height: 60px;
+    white-space: nowrap;
+}
+
+.main-content
+{
+    margin-left: 270px;
+    overflow: visible;
+
+}
+
+header
+{
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #efefef ;
+    padding:  1rem 1.5rem;
+}
+.menu-toggle label
+{
+    height: 60px;
+    width: 60px;
+    display: grid;
+    place-items: center;
+    font-size: 1.5rem;
+    border-radius: 50%;
+
+}
+
+.menu-toggle label:hover 
+{
+    background: #efefef;
+    
+}
+
+main{
+    padding: 1.5rem;
+    background: #f1f5f9;
+    min-height: calc(100vh -70px);
+
+}
+
+.cards
+{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap:3rem;
+    margin-top: 2rem;
+
+
+}
+
+.card-single
+{
+    background: #fff;
+    padding: 1rem;
+    box-shadow: 3px 2px 6px rgba(0,0,0,0.2);
+    border-radius: 2px;
+}
+.card-flex{
+    display: grid;
+    grid-template-columns: 70% auto;
+
+}
+
+#myTable{
+    width:100%;
+    border-collapse:collapse;
+    }
+    #HeadRow{
+    background:#004C2E;
+    color:white;
+    font-weight:bold;
+    }
+    #myTable td{
+    padding:5px;
+    border:1px solid black;
+    text-align:left;
+    }
+    .optionsDiv {
+    padding-bottom:10px;
+    font-weight:bold;
+    }
+    #selectField{
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    height: 30px;
+    width: 200px;
+    color:white;
+    background-color: #004C2E;
+    }
+    .odd{
+    background:#CCFFEB;
+    }
+    .even{
+    background:#99FFD6;
+    }
+    
+    
+    
+
+
+
+
+    form{
+        padding-left: 10px;
+    }
+    
+    
+    .name{
+        margin-left: 25px;
+        margin-top: 30px;
+        width: 125px;
+        color: rgb(75, 37, 100);
+        font-size: 18px;
+        font-weight: 700;	
+    }
+    
+    .ID{
+        position: relative;
+        left: 200px;
+        top: -37px;
+        line-height: 40px;
+        width: 480px;
+        border-radius: 6px;
+        padding: 0 22px;
+        font-size: 16px;
+    }
+    
+    .Name{
+        position: relative;
+        left: 200px;
+        top: -37px;
+        line-height: 40px;
+        width: 480px;
+        border-radius: 6px;
+        padding: 0 22px;
+        font-size: 16px;
+        color: rgb(14, 6, 6);
+    }
+    
+    .age{
+        position: relative;
+        left: 200px;
+        top: -37px;
+        line-height: 40px;
+        width: 480px;
+        border-radius: 6px;
+        padding: 0 22px;
+        font-size: 16px;
+        color: #555;
+    }
+    
+    button{
+        background-color: #3BAF9F;
+        display: block;
+        margin: 20px 0px 0px 20px;
+        text-align:center;
+        border-radius: 12px;
+        border: 2px solid #366473;
+        padding: 14px 110px;
+        outline: none;
+        color: white;
+        cursor: pointer;
+        transition: 0.25;
+    }
+    button:hover{
+        background-color: #5390F5;
+    }
+
+
+    .button{
+        position: absolute;
+        top: 55%;
+        left: 60%;
+        transform: translate(-50%,-50%);
+    }
+    
+    .btn{
+        border: 1px solid #000;
+        padding: 10px 30px;
+        color: #000;
+        text-decoration: none;
+        transition: 0.6s ease;
+    }
+    
+    .btn:hover{
+        background-color: #000;
+        color: #fff;
+    }
+
+
+    
